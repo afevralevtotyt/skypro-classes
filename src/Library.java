@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Library {
 
     private Book[] booksArray;
@@ -32,7 +34,7 @@ public class Library {
             }
         }
     }
-    public void changeYearByName(String name, String newYear){
+    public void changeYearByName(String name, int newYear){
         for (int i = 0; i < booksArray.length; i++) {
             if (booksArray[i].getName()==name){
                 this.booksArray[i].setPublicationYear(newYear);
@@ -42,5 +44,12 @@ public class Library {
             }
     }
 
-
+    @Override
+    public String toString() {
+        String Books = "";
+        for (int i = 0; i < booksArray.length; i++) {
+          Books = Books + booksArray[i].toString() + "\n";
+        }
+        return "Library: "+"\n" + Books;
+    }
 }
